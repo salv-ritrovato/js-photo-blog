@@ -1,0 +1,28 @@
+/* CSS RESET */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(../img/cork.png);
+}
+
+h1 {
+    background-image: url(../img/wall.png);
+    padding: 20px;
+    text-align: center;
+    font-size: 3rem;
+}
+
+.card {
+    margin-top: 0.5rem;
+    padding: 1rem;
+    width: 18rem;
+}
+
+.card img {
+    padding: 5px;
+}
+
