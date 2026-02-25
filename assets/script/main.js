@@ -6,6 +6,8 @@ fetch(endpoint)
         console.log(pictures);
     }) */
 
+
+
 // I'm currently working offline so I have no access to the API, working with an offline array
 const photoList = [{
     "id": 1,
@@ -54,18 +56,20 @@ let photoCards = "";
 // Cycling through the array of cards
 for (let i = 0; i < photoList.length; i++) {
     const cards = photoList[i];
-    console.log(cards);
+    // Deconstructing our array
     const { id, title, date, url } = cards;
+    // Generating dynamic HTML for our photos
     const dynamicHTML = `<div class="col-12 col-sm-6 col-md-6 col-lg-4 d-flex justify-content-center mb-3">
                             <div class="card">
-                                <img src="./assets/img/pin.svg" alt="Photo Pin" class="photopin">
-                                <img src="./assets/img/placeholderpicture.png" class="card-img" alt="Photo 1">
+                                <img src="./assets/img/pin.svg" alt="${title}" class="photopin">
+                                <img src="./assets/img/placeholderpicture.png" class="card-img" alt="${title}">
                                     <div class="card-body text-center">
-                                        <p class="card-title">Lorem ipsum dolor sit amet.</p>
+                                        <p class="card-title">Lorem ipsum dolor sit amet</p>
                                     </div>
                             </div>
                         </div>
                         `
+    // Adding our dynamic HTML to the empty variable previously inizialized
     photoCards += dynamicHTML;
 };
 
