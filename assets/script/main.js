@@ -21,13 +21,13 @@ fetch(endpoint)
                                     <div class="card">
                                     <img src="./assets/img/pin.svg" alt="Pin" class="photopin">
                                     <img src="${url}" class="card-img" alt="${title}">
-                                    <figcaption>${date}</figcaption>
-                                    <div class="card-body text-center">
-                                        <p class="card-title">Lorem ipsum dolor sit amet</p>
+                                    <span class="caption">${date}</span>
+                                        <div class="card-body">
+                                        <p class="card-title"><strong>${title.toUpperCase()}</strong></p>
+                                        </div>
                                     </div>
-                            </div>
-                        </div>
-                        `
+                                </div>
+                                `
             // Adding our dynamic HTML to the empty variable previously inizialized
             photoCards += dynamicHTML;
             // The cards will be generated all at once inside the container
@@ -36,6 +36,7 @@ fetch(endpoint)
     });
 
 
+/* ---------------------------------------------------------------------- */
 
 /* // I'm currently working offline so I have no access to the API, working with an offline array
 const photoList = [{
