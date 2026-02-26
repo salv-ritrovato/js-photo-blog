@@ -1,12 +1,13 @@
 // Inizitalizing a variable where my API will go
-const endpoint = 'https://lanciweb.github.io/demo/api/pictures/'
+const endpoint = 'https://lanciweb.github.io/demo/api/pictures/';
 
 // DOM Manipulation on the card container
 const cardContainer = document.getElementById('content')
 
 // DOM Manipulation for events
-const btnClose = document.querySelector('.closeBtn')
-const cardImg = document.querySelector('.card-img')
+const overlayShowHide = document.querySelector('.overlay');
+const btnClose = document.querySelector('.closeBtn');
+
 
 // Empty variable where our cards will be generated
 let photoCards = "";
@@ -37,12 +38,19 @@ fetch(endpoint)
             // The cards will be generated all at once inside the container
             cardContainer.innerHTML = photoCards;
         };
+    // DOM Manipulation for card images
+    const cardImg = document.querySelectorAll('.card-img');
+    // Cycling through the images again and adding an event listener to each
+    cardImg.forEach(image => {
+        image.addEventListener('click', function() {
+            overlayShowHide.style.display = 'flex';
+        });
     });
-    
-    // Event listeners for button and overlay img
+    // Adding event listener to button so it can close the pictures
     btnClose.addEventListener('click', function(){
-
+        overlayShowHide.style.display = 'none';
     })
+});
 
 
 
