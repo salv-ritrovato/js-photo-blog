@@ -6,8 +6,8 @@ const cardContainer = document.getElementById('content')
 
 // DOM Manipulation for events
 const overlayShowHide = document.querySelector('.overlay');
-const btnClose = document.querySelector('.closeBtn');
-const imgOver = document.querySelector('.overlayimg')
+const overlayBtnClose = document.querySelector('.closeBtn');
+const imgOverlay = document.querySelector('.overlayimg')
 
 
 // Empty variable where our cards will be generated
@@ -16,14 +16,14 @@ let photoCards = "";
 fetch(endpoint)
     .then(res => res.json())
     .then(pictures => {
-        console.log(pictures);
         // Cycling through the array of cards
         for (let i = 0; i < pictures.length; i++) {
-            const cards = pictures[i];
+            const card = pictures[i];
             // Deconstructing our array
-            const { id, title, date, url } = cards;
+            const { id, title, date, url } = card;
             // Generating dynamic HTML for our photos
-            const dynamicHTML = `<div class="col-12 col-sm-6 col-md-6 col-lg-4 d-flex justify-content-center mb-3">
+            const dynamicHTML = `
+                                <div class="col-12 col-sm-6 col-md-6 col-lg-4 d-flex justify-content-center mb-3">
                                     <div class="card">
                                     <img src="./assets/img/pin.svg" alt="Pin" class="photopin">
                                     <img src="${url}" class="card-img" alt="${title}">
@@ -45,12 +45,12 @@ fetch(endpoint)
         cardImg.forEach(image => {
             image.addEventListener('click', function () {
                 overlayShowHide.style.display = 'flex';
-                imgOver.src = image.src;
-                imgOver.alt = image.alt;
+                imgOverlay.src = image.src;
+                imgOverlay.alt = image.alt;
             });
         });
         // Adding event listener to the button so it can close the pictures
-        btnClose.addEventListener('click', function () {
+        overlayBtnClose.addEventListener('click', function () {
             overlayShowHide.style.display = 'none';
         });
         // Adding event listener to the overlay aswell so that turns off its own display when the user clicks outside of the photo
