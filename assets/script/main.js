@@ -7,6 +7,7 @@ const cardContainer = document.getElementById('content')
 // DOM Manipulation for events
 const overlayShowHide = document.querySelector('.overlay');
 const btnClose = document.querySelector('.closeBtn');
+const imgOver = document.querySelector('.overlayimg')
 
 
 // Empty variable where our cards will be generated
@@ -38,19 +39,20 @@ fetch(endpoint)
             // The cards will be generated all at once inside the container
             cardContainer.innerHTML = photoCards;
         };
-    // DOM Manipulation for card images
-    const cardImg = document.querySelectorAll('.card-img');
-    // Cycling through the images again and adding an event listener to each
-    cardImg.forEach(image => {
-        image.addEventListener('click', function() {
-            overlayShowHide.style.display = 'flex';
+        // DOM Manipulation for card images
+        const cardImg = document.querySelectorAll('.card-img');
+        // Cycling through the images again and adding an event listener to each
+        cardImg.forEach(image => {
+            image.addEventListener('click', function () {
+                overlayShowHide.style.display = 'flex';
+                imgOver.src = image.src;
+            });
+        });
+        // Adding event listener to button so it can close the pictures
+        btnClose.addEventListener('click', function () {
+            overlayShowHide.style.display = 'none';
         });
     });
-    // Adding event listener to button so it can close the pictures
-    btnClose.addEventListener('click', function(){
-        overlayShowHide.style.display = 'none';
-    })
-});
 
 
 
