@@ -50,12 +50,12 @@ h1 {
     height: auto;
 }
 
-.card img {
-    margin: 5px;
+.card-img {
+    margin: 1px;
     cursor: pointer;
 }
 
-.card img:hover {
+.card-img:hover {
     transform: scale(1.04);
     transform: rotate(10deg);
     transition: 1s;
