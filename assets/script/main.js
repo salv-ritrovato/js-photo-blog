@@ -46,6 +46,7 @@ fetch(endpoint)
             image.addEventListener('click', function () {
                 overlayShowHide.style.display = 'flex';
                 imgOver.src = image.src;
+                imgOver.alt = image.alt;
             });
         });
         // Adding event listener to the button so it can close the pictures
