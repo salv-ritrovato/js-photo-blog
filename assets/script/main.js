@@ -53,6 +53,10 @@ fetch(endpoint)
         btnClose.addEventListener('click', function () {
             overlayShowHide.style.display = 'none';
         });
+        // Adding event listener to the overlay aswell so that turns off its own display when the user clicks outside of the photo
+        overlayShowHide.addEventListener('click', function() {
+            overlayShowHide.style.display = 'none';
+        })
     });
 
 
