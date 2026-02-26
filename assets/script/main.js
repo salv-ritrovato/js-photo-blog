@@ -4,6 +4,10 @@ const endpoint = 'https://lanciweb.github.io/demo/api/pictures/'
 // DOM Manipulation on the card container
 const cardContainer = document.getElementById('content')
 
+// DOM Manipulation for events
+const btnClose = document.querySelector('.closeBtn')
+const cardImg = document.querySelector('.card-img')
+
 // Empty variable where our cards will be generated
 let photoCards = "";
 
@@ -34,19 +38,24 @@ fetch(endpoint)
             cardContainer.innerHTML = photoCards;
         };
     });
-
-
-
-
-
-
-
-
-
-
-
-
     
+    // Event listeners for button and overlay img
+    btnClose.addEventListener('click', function(){
+
+    })
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* ---------------------------------------------------------------------- */
 
 /* // I'm currently working offline so I have no access to the API, working with an offline array
