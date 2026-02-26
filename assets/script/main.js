@@ -48,22 +48,11 @@ fetch(endpoint)
                 imgOver.src = image.src;
             });
         });
-        // Adding event listener to button so it can close the pictures
+        // Adding event listener to the button so it can close the pictures
         btnClose.addEventListener('click', function () {
             overlayShowHide.style.display = 'none';
         });
     });
-
-
-
-
-
-
-
-
-
-
-
 
 
 /* ---------------------------------------------------------------------- */

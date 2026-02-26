@@ -51,7 +51,15 @@ h1 {
 }
 
 .card img {
-    padding: 5px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.card img:hover {
+    transform: scale(1.04);
+    transform: rotate(10deg);
+    transition: 1s;
+    box-shadow: 0 0 20px black;
 }
 
 /* OVERLAY & OVERLAY BUTTON */
@@ -75,6 +83,7 @@ h1 {
     transform: translateX(-50%);
     background-image: url(../img/wall.png);
     padding: 8px 12px;
+    cursor: pointer;
 }
 
 .overlay img {
